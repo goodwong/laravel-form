@@ -75,7 +75,8 @@ class FormController extends Controller
      */
     public function update(Request $request, Form $form)
     {
-        return $form->update($request->all());
+        $form->update($request->all());
+        return $form;
     }
 
     /**
