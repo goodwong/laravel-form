@@ -41,12 +41,13 @@ class FormSubmissionController extends Controller
      */
     public function store(Request $request, Form $form)
     {
-        $submission = new FormSubmission($request->all());
-        $submission->form_id = $form->id;
-        if (!isset($submission->user_id) && $request->user()) {
-            $submission->user_id = $request->user()->id;
+        $formSubmission = new FormSubmission($request->all());
+        $formSubmission->form_id = $form->id;
+        if (!isset($formSubmission->user_id) && $request->user()) {
+            $formSubmission->user_id = $request->user()->id;
         }
-        return $submission->save();
+        $formSubmission->save();
+        return $formSubmission;
     }
 
     /**
@@ -82,7 +83,7 @@ class FormSubmissionController extends Controller
      */
     public function update(Request $request, Form $form, FormSubmission $formSubmission)
     {
-        return $formSubmission->update($request->all());
+        //
     }
 
     /**

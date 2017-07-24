@@ -7,9 +7,22 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class FormTest extends TestCase
+class FormSubmissionTest extends TestCase
 {
     use DatabaseTransactions;
+
+    var $form = null;
+
+    /**
+     * setup
+     */
+    protected function setUp()
+    {
+        parent::setUp();
+
+        $this->form = \Goodwong\LaravelForm\Entities\Form::create(['name' => 'Test for submission']);
+        $this->api = '/forms/' . $this->form->id . '/submissions';
+    }
 
     /**
      * A basic test example.
@@ -20,7 +33,7 @@ class FormTest extends TestCase
     {
         // $user = factory(User::class)->create();
         $response = $this//->actingAs($user)
-            ->json('POST', '/forms', ['name' => 'Survey']);
+            ->json('POST', $this->api, ['data' => ['name' => 'William']]);
 
         $response
             ->assertStatus(200)
@@ -35,29 +48,10 @@ class FormTest extends TestCase
      */
     public function testGet()
     {
-        \Goodwong\LaravelForm\Entities\Form::create(['name' => uniqid()]);
-        $response = $this->json('GET', '/forms');
+        \Goodwong\LaravelForm\Entities\FormSubmission::create(['form_id' => $this->form->id, 'data' => ['name' => 'test']]);
+        $response = $this->json('GET', $this->api);
         $response->assertStatus(200);
         $forms = $response->decodeResponseJson();
         $this->assertGreaterThanOrEqual(1, count($forms));
-    }
-
-    /**
-     * test get
-     */
-    public function testUpdate()
-    {
-        $name = 'FormUpdateTest';
-        $form = \Goodwong\LaravelForm\Entities\Form::create(['name' => uniqid()]);
-        $response = $this->json('PUT', '/forms/' . $form->id, ['name' => $name]);
-        $response->assertStatus(200)
-            ->assertJson([
-                'name' => true,
-            ]);
-        $this->assertEquals($name, $response->decodeResponseJson()['name']);
-        // $this->assertDatabaseHas('forms', [
-        //     'id' => $form->id,
-        //     'name' => $name,
-        // ]);
     }
 }
