@@ -52,7 +52,7 @@ class FormController extends Controller
      */
     public function show(Form $form)
     {
-        return $form;
+        return $form->makeVisible('settings');
     }
 
     /**

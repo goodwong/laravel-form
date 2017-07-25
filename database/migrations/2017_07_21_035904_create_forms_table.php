@@ -18,7 +18,7 @@ class CreateFormsTable extends Migration
             $table->string('category_id', 32)->nullable();
             $table->string('name', 64);
             $table->string('status', 16)->nullable();
-            $table->jsonb('setting')->nullable();
+            $table->jsonb('settings')->nullable();
             $table->timestamp('start_at')->nullable();
             $table->timestamp('end_at')->nullable();
             $table->timestamps();
