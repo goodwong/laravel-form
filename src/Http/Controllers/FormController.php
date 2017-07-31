@@ -75,8 +75,11 @@ class FormController extends Controller
      */
     public function update(Request $request, Form $form)
     {
+        if ($request->input('updated_at') != $form->updated_at) {
+            return response()->json("编辑冲突，有人在这段时间编辑过本条数据，请刷新后重新编辑保存", 409);
+        }
         $form->update($request->all());
-        return $form;
+        return $form->makeVisible('settings');
     }
 
     /**
