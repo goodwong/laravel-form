@@ -15,10 +15,15 @@ class CreateFormSubmissionsTable extends Migration
     {
         Schema::create('form_submissions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('form_id');
+            $table->unsignedInteger('form_id');
             $table->integer('user_id')->nullable();
             $table->jsonb('data');
             $table->timestamps();
+
+            $table->foreign('form_id')
+                  ->references('id')->on('forms')
+                  ->onUpdate('cascade')
+                  ->onDelete('cascade');
         });
     }
 
@@ -29,6 +34,10 @@ class CreateFormSubmissionsTable extends Migration
      */
     public function down()
     {
+        Schema::table('form_submissions', function (Blueprint $table) {
+            $table->dropForeign('form_submissions_form_id_foreign');
+        });
+
         Schema::dropIfExists('form_submissions');
     }
 }
