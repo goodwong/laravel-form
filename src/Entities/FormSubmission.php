@@ -30,6 +30,6 @@ class FormSubmission extends Model
      * cast attributes
      */
     protected $casts = [
-        'data' => 'array',
+        'data' => 'object',
     ];
 }
