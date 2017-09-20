@@ -3,6 +3,7 @@
 namespace Goodwong\LaravelForm\Http\Controllers;
 
 use Goodwong\LaravelForm\Entities\Form;
+use Goodwong\LaravelForm\Events\FormViewed;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -47,11 +48,13 @@ class FormController extends Controller
     /**
      * Display the specified resource.
      *
+     * @param  \Illuminate\Http\Request  $request
      * @param  \Goodwong\LaravelForm\Entities\Form  $form
      * @return \Illuminate\Http\Response
      */
-    public function show(Form $form)
+    public function show(Request $request, Form $form)
     {
+        event(new FormViewed($request->user() ? $request->user()->id : null, $form));
         return $form->makeVisible('settings');
     }
 

@@ -4,6 +4,7 @@ namespace Goodwong\LaravelForm\Http\Controllers;
 
 use Goodwong\LaravelForm\Entities\Form;
 use Goodwong\LaravelForm\Entities\FormSubmission;
+use Goodwong\LaravelForm\Events\FormSubmitted;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -47,6 +48,8 @@ class FormSubmissionController extends Controller
             $formSubmission->user_id = $request->user()->id;
         }
         $formSubmission->save();
+
+        event(new FormSubmitted($formSubmission->user_id, $form, $formSubmission));
         return $formSubmission;
     }
 
