@@ -1,0 +1,25 @@
+{
+    "name": "goodwong/laravel-form",
+    "type": "library",
+    "authors": [
+        {
+            "name": "william",
+            "email": "goodwong@foxmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Goodwong\\LaravelForm\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Goodwong\\LaravelForm\\FormServiceProvider"
+            ]
+        }
+    }
+}
