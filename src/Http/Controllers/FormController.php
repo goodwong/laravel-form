@@ -42,7 +42,14 @@ class FormController extends Controller
      */
     public function store(Request $request)
     {
-        return Form::create($request->all());
+        if ($base_id = $request->input('clone_from')) {
+            $form = Form::findOrFail($base_id)->replicate();
+        } else {
+            $form = new Form;
+        }
+        $form->fill($request->all());
+        $form->save();
+        return $form;
     }
 
     /**
