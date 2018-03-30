@@ -35,7 +35,7 @@ class FormTest extends TestCase
      */
     public function testGet()
     {
-        \Goodwong\LaravelForm\Entities\Form::create(['name' => uniqid()]);
+        \Goodwong\Form\Entities\Form::create(['name' => uniqid()]);
         $response = $this->json('GET', '/forms');
         $response->assertStatus(200);
         $forms = $response->decodeResponseJson();
@@ -48,7 +48,7 @@ class FormTest extends TestCase
     public function testUpdate()
     {
         $name = 'FormUpdateTest';
-        $form = \Goodwong\LaravelForm\Entities\Form::create(['name' => uniqid()]);
+        $form = \Goodwong\Form\Entities\Form::create(['name' => uniqid()]);
         $response = $this->json('PUT', '/forms/' . $form->id, ['name' => $name]);
         $response->assertStatus(200)
             ->assertJson([

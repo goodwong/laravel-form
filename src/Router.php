@@ -1,6 +1,6 @@
 <?php
 
-namespace Goodwong\LaravelForm;
+namespace Goodwong\Form;
 
 use Illuminate\Support\Facades\Route;
 

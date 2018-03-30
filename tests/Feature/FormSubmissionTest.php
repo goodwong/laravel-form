@@ -20,7 +20,7 @@ class FormSubmissionTest extends TestCase
     {
         parent::setUp();
 
-        $this->form = \Goodwong\LaravelForm\Entities\Form::create(['name' => 'Test for submission']);
+        $this->form = \Goodwong\Form\Entities\Form::create(['name' => 'Test for submission']);
         $this->api = '/forms/' . $this->form->id . '/submissions';
     }
 
@@ -48,7 +48,7 @@ class FormSubmissionTest extends TestCase
      */
     public function testGet()
     {
-        \Goodwong\LaravelForm\Entities\FormSubmission::create(['form_id' => $this->form->id, 'data' => ['name' => 'test']]);
+        \Goodwong\Form\Entities\FormSubmission::create(['form_id' => $this->form->id, 'data' => ['name' => 'test']]);
         $response = $this->json('GET', $this->api);
         $response->assertStatus(200);
         $forms = $response->decodeResponseJson();

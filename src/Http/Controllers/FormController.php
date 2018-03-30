@@ -1,9 +1,9 @@
 <?php
 
-namespace Goodwong\LaravelForm\Http\Controllers;
+namespace Goodwong\Form\Http\Controllers;
 
-use Goodwong\LaravelForm\Entities\Form;
-use Goodwong\LaravelForm\Events\FormViewed;
+use Goodwong\Form\Entities\Form;
+use Goodwong\Form\Events\FormViewed;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -56,7 +56,7 @@ class FormController extends Controller
      * Display the specified resource.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Goodwong\LaravelForm\Entities\Form  $form
+     * @param  \Goodwong\Form\Entities\Form  $form
      * @return \Illuminate\Http\Response
      */
     public function show(Request $request, Form $form)
@@ -68,7 +68,7 @@ class FormController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \Goodwong\LaravelForm\Entities\Form  $form
+     * @param  \Goodwong\Form\Entities\Form  $form
      * @return \Illuminate\Http\Response
      */
     public function edit(Form $form)
@@ -80,7 +80,7 @@ class FormController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Goodwong\LaravelForm\Entities\Form  $form
+     * @param  \Goodwong\Form\Entities\Form  $form
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Form $form)
@@ -95,7 +95,7 @@ class FormController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \Goodwong\LaravelForm\Entities\Form  $form
+     * @param  \Goodwong\Form\Entities\Form  $form
      * @return \Illuminate\Http\Response
      */
     public function destroy(Form $form)

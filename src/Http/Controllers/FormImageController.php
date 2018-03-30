@@ -1,8 +1,8 @@
 <?php
 
-namespace Goodwong\LaravelForm\Http\Controllers;
+namespace Goodwong\Form\Http\Controllers;
 
-use Goodwong\LaravelForm\Entities\Form;
+use Goodwong\Form\Entities\Form;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -33,7 +33,7 @@ class FormImageController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Goodwong\LaravelForm\Entities\Form  $form
+     * @param  \Goodwong\Form\Entities\Form  $form
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request, Form $form)
@@ -48,7 +48,7 @@ class FormImageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \Goodwong\LaravelForm\Entities\Form  $form
+     * @param  \Goodwong\Form\Entities\Form  $form
      * @return \Illuminate\Http\Response
      */
     public function show(Form $form)
@@ -59,7 +59,7 @@ class FormImageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \Goodwong\LaravelForm\Entities\Form  $form
+     * @param  \Goodwong\Form\Entities\Form  $form
      * @return \Illuminate\Http\Response
      */
     public function edit(Form $form)
@@ -71,7 +71,7 @@ class FormImageController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Goodwong\LaravelForm\Entities\Form  $form
+     * @param  \Goodwong\Form\Entities\Form  $form
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Form $form)
@@ -82,7 +82,7 @@ class FormImageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \Goodwong\LaravelForm\Entities\Form  $form
+     * @param  \Goodwong\Form\Entities\Form  $form
      * @return \Illuminate\Http\Response
      */
     public function destroy(Form $form)

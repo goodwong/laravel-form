@@ -1,10 +1,10 @@
 <?php
 
-namespace Goodwong\LaravelForm\Entities;
+namespace Goodwong\Form\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Goodwong\LaravelDefaultJsonField\Traits\DefaultJsonField;
+use Goodwong\DefaultJsonField\Traits\DefaultJsonField;
 
 class Form extends Model
 {

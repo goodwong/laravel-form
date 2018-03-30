@@ -1,6 +1,6 @@
 <?php
 
-namespace Goodwong\LaravelForm\Entities;
+namespace Goodwong\Form\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 

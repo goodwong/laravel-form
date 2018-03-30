@@ -1,6 +1,6 @@
 <?php
 
-namespace Goodwong\LaravelForm\Events;
+namespace Goodwong\Form\Events;
 
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
@@ -9,8 +9,8 @@ use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
-use Goodwong\LaravelForm\Entities\Form;
-use Goodwong\LaravelForm\Entities\FormSubmission;
+use Goodwong\Form\Entities\Form;
+use Goodwong\Form\Entities\FormSubmission;
 
 class FormSubmitted
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Goodwong\LaravelForm\Http\Controllers;
+namespace Goodwong\Form\Http\Controllers;
 
-use Goodwong\LaravelForm\Entities\Form;
-use Goodwong\LaravelForm\Entities\FormSubmission;
-use Goodwong\LaravelForm\Events\FormSubmitted;
+use Goodwong\Form\Entities\Form;
+use Goodwong\Form\Entities\FormSubmission;
+use Goodwong\Form\Events\FormSubmitted;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -13,7 +13,7 @@ class FormSubmissionController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param  \Goodwong\LaravelForm\Entities\Form  $form
+     * @param  \Goodwong\Form\Entities\Form  $form
      * @return \Illuminate\Http\Response
      */
     public function index(Form $form)
@@ -37,7 +37,7 @@ class FormSubmissionController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Goodwong\LaravelForm\Entities\Form  $form
+     * @param  \Goodwong\Form\Entities\Form  $form
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request, Form $form)
@@ -56,8 +56,8 @@ class FormSubmissionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \Goodwong\LaravelForm\Entities\Form  $form
-     * @param  \Goodwong\LaravelForm\Entities\FormSubmission  $formSubmission
+     * @param  \Goodwong\Form\Entities\Form  $form
+     * @param  \Goodwong\Form\Entities\FormSubmission  $formSubmission
      * @return \Illuminate\Http\Response
      */
     public function show(Form $form, FormSubmission $formSubmission)
@@ -68,7 +68,7 @@ class FormSubmissionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \Goodwong\LaravelForm\Entities\FormSubmission  $formSubmission
+     * @param  \Goodwong\Form\Entities\FormSubmission  $formSubmission
      * @return \Illuminate\Http\Response
      */
     public function edit(FormSubmission $formSubmission)
@@ -80,8 +80,8 @@ class FormSubmissionController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Goodwong\LaravelForm\Entities\Form  $form
-     * @param  \Goodwong\LaravelForm\Entities\FormSubmission  $formSubmission
+     * @param  \Goodwong\Form\Entities\Form  $form
+     * @param  \Goodwong\Form\Entities\FormSubmission  $formSubmission
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Form $form, FormSubmission $formSubmission)
@@ -92,8 +92,8 @@ class FormSubmissionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \Goodwong\LaravelForm\Entities\Form  $form
-     * @param  \Goodwong\LaravelForm\Entities\FormSubmission  $formSubmission
+     * @param  \Goodwong\Form\Entities\Form  $form
+     * @param  \Goodwong\Form\Entities\FormSubmission  $formSubmission
      * @return \Illuminate\Http\Response
      */
     public function destroy(Form $form, FormSubmission $formSubmission)
